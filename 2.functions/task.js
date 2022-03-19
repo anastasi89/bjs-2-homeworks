@@ -1,24 +1,34 @@
 // Задание 1
-function getArrayParams(arr) {
-  let min, max, sum, avg;
-
+function getArrayParams(arr = [5, 6, 8])  {
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+            max = arr[i];
+        }
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    sum += arr[i];
+   }
+   let avg = sum / arr.length;
+   avg = +avg.toFixed(2);
   // Ваш код
-
   return { min: min, max: max, avg: avg };
 }
-
 // Задание 2
 function worker(arr) {
   let sum;
-
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
   // Ваш код
-
   return sum;
 }
 
 function makeWork(arrOfArr, func) {
   let max;
-
   // Ваш кода
   // for ...
   
