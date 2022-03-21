@@ -22,11 +22,12 @@ function worker(arr) {
 }
 
 function makeWork(arrOfArr, func) {
-  let max = 0;
+  let max = -Infinity;
+  let nozzle = 0;
   for (let i = 0; i < arrOfArr.length; i++) {
-    func = worker(arrOfArr[i]);
-    if (func > max) {
-        max = func;
+    nozzle = func(arrOfArr[i]);
+    if (nozzle > max) {
+        max = nozzle;
     }
   }
   // Ваш кода
