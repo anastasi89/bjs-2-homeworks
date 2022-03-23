@@ -23,9 +23,8 @@ function worker(arr) {
 
 function makeWork(arrOfArr, func) {
   let max = -Infinity;
-  let nozzle = 0;
   for (let i = 0; i < arrOfArr.length; i++) {
-    nozzle = func(arrOfArr[i]);
+   let nozzle = func(arrOfArr[i]);
     if (nozzle > max) {
         max = nozzle;
     }
@@ -37,6 +36,9 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-
+  let min = Math.min(...arr);
+  let max = Math.max(...arr);
+  let result = Math.abs(max - min);
+  return result;
   // Ваш код
 }
