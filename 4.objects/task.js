@@ -3,7 +3,6 @@ function Student(name, gender, age) {
     this.gender = gender;
     this.age = age;
     // Ваш код
-
 }
 
 Student.prototype.setSubject = function (subjectName) {
@@ -19,16 +18,13 @@ Student.prototype.addMark = function (mark) {
         }
 }
 
-Student.prototype.addMarks = function (...marks) {
-    this.marks.push(...marks);
+Student.prototype.addMarks = function (...mark) {
+            this.marks = mark;
 }
 
 Student.prototype.getAverage = function () {
-    let sum = 0;
-    for (let mark of this.marks) {
-        sum += 1;
-    }
-    return sum / this.marks.length;
+
+    return this.marks.reduce ((sum,current) => sum + current) / this.marks.length;
 }
 
 Student.prototype.exclude = function (reason) {
