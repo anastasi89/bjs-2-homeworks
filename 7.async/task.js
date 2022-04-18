@@ -6,10 +6,10 @@ class AlarmClock {
 
     addClock(time, callback, id) {
         if (!id) {
-            throw new Error("Ошибка! Параметр не передан");
+            throw new Error(`Ошибка! Параметр не передан`);
         }
         if (this.alarmCollection.some(alarm => alarm.id === id)) {
-        	console.error("Звонок уже существует");
+        	console.error(`Звонок уже существует`);
         	return;
         }
         this.alarmCollection.push({id: id, time: time, callback: callback});
